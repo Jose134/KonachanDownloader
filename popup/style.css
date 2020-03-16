@@ -1,0 +1,16 @@
+html, body {
+    background-color: #22222222;
+    width: 350px;
+}
+  
+.page-choice {
+    width: 100%;
+    padding: 4px;
+    font-size: 1.5em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.page-choice:hover {
+    background-color: #CFF2F2;
+}

@@ -1,0 +1,29 @@
+{
+
+    "description": "Download pictures from konachan",
+    "manifest_version": 2,
+    "name": "Konachan Downloader",
+    "version": "1.0",
+
+    "permissions": [
+        "*",
+        "*://onewaifuaday.000webhostapp.com/*",
+        "activeTab",
+        "downloads"
+    ],
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+   
+    "browser_action": {
+      "browser_style": true,
+      "default_popup": "popup/page.html",
+      "default_icon": {
+        "16": "icons/icon_16.png",
+        "32": "icons/icon_32.png",
+        "256": "icons/icon_256.png"
+      }
+    }
+  
+}
