@@ -8,17 +8,18 @@
 
     <body>
         <!--img class="image" src="../icons/icon_256.png"></img-->
-        
-        <form style="position: absolute; bottom: 0;">
-            <label for="input_tags">Tags: </label>
-            <input type="text" id="input_tags"></input>
+        <div style="display: inline-block">
+            <label for="input_tags">Tags:</label>
+            <input style="float:right;" type="text" id="input_tags"></input>
+        </div>
 
+        <div style="display: inline-block">
             <label for="input_limit">Limit: </label>
-            <input type="number" id="input_limit" min="1" max="100" value="100"></input>
+            <input style="float:right;" type="number" id="input_limit" min="1" max="100" value="100"></input>
+        </div>
 
-            <button id="button_download">Download!</button>
-            <script type="text/javascript" src="page.js"></script>
-        </form>
+        <button id="button_download">Download!</button>
+        <script type="text/javascript" src="page.js"></script>
     </body>
 
 </html>

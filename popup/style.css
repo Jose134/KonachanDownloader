@@ -13,8 +13,9 @@ html, body {
 }
 
 input {
-    max-width: 100px;
+    width: 300px;
 }
+
 label {
     color: white;
 }

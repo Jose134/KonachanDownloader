@@ -1,9 +1,9 @@
 function onUpdatedTab (tabId, changeInfo, tabInfo) {
+    console.log(changeInfo.status);
     if (changeInfo.status != "complete") {
         return;
     }
-    
-    console.log("owo");
+
     browser.tabs.executeScript(
         tabId,
         { code: "var result = document.body.innerText; document.body.innerHTML = ''; result" }
@@ -30,7 +30,7 @@ function onUpdatedTab (tabId, changeInfo, tabInfo) {
         });
     });
 
-    browser.tabs.onUpdated.removeListener(onUpdatedTab);
+    //browser.tabs.onUpdated.removeListener(onUpdatedTab);
 }
 
 var tags;
@@ -39,14 +39,14 @@ function owo (e) {
         return;
     }
     
-    var limit = document.getElementById("input_limit").value;
-    limit = Math.min(Math.max(limit, 1), 100);
+    /*var limit = document.getElementById("input_limit").value;
+    limit = Math.min(Math.max(limit, 1), 100);*/
 
     tags = document.getElementById("input_tags").value;
     tags = tags.split(' ').join('_');
     tags = tags.split('+').join('%2B');
 
-    var url = "https://onewaifuaday.000webhostapp.com/getkonachan.php?tags=" + tags + "&limit=" + limit;
+    var url = "https://onewaifuaday.000webhostapp.com/getkonachan.php?tags=" + tags;
 
     browser.tabs.onUpdated.addListener(onUpdatedTab);
     var creating = browser.tabs.create({
