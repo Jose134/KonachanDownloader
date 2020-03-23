@@ -1,16 +1,20 @@
 html, body {
-    background-color: #22222222;
+    background-color: #222;
     width: 350px;
+    min-height: 200px;
 }
-  
-.page-choice {
-    width: 100%;
-    padding: 4px;
-    font-size: 1.5em;
-    text-align: center;
-    cursor: pointer;
+
+.image {
+    max-width: 200px;
 }
 
 .page-choice:hover {
     background-color: #CFF2F2;
+}
+
+input {
+    max-width: 100px;
+}
+label {
+    color: white;
 }

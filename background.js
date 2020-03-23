@@ -1,9 +1,9 @@
 function onStarted (id) {
-    console.log('started download: ${id}');
+    console.log(`started download: ${id}`);
 }
 
 function onFailed (error) {
-    console.log("Failed to download ${error}");
+    console.log(`Failed to download ${error}`);
 }
 
 function download (request, sender, sendResponse) {

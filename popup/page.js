@@ -6,11 +6,23 @@ function onUpdatedTab (tabId, changeInfo, tabInfo) {
     console.log("owo");
     browser.tabs.executeScript(
         tabId,
-        { code: "var result = document.body.innerText; result" }
+        { code: "var result = document.body.innerText; document.body.innerHTML = ''; result" }
     ).then(function (response) {
+        browser.tabs.insertCSS(tabId, {
+            file: "preview.css"
+        });
+
         var data = JSON.parse(response);
         
         data.forEach(element => {
+            var preview = element.preview_url;
+            browser.tabs.executeScript(
+                tabId,
+                { code: "document.body.innerHTML += '<div class=\"previewdiv\"><img class = \"previewimg\" src=\"" + preview + "\"></img></div>';"}
+            ).then(function (response) {
+                console.log("test");
+            });
+
             browser.runtime.sendMessage({
                 element: element,
                 downloadFolder: tags
@@ -27,11 +39,14 @@ function owo (e) {
         return;
     }
     
+    var limit = document.getElementById("input_limit").value;
+    limit = Math.min(Math.max(limit, 1), 100);
+
     tags = document.getElementById("input_tags").value;
     tags = tags.split(' ').join('_');
     tags = tags.split('+').join('%2B');
 
-    var url = "https://onewaifuaday.000webhostapp.com/getkonachan.php?tags=" + tags;
+    var url = "https://onewaifuaday.000webhostapp.com/getkonachan.php?tags=" + tags + "&limit=" + limit;
 
     browser.tabs.onUpdated.addListener(onUpdatedTab);
     var creating = browser.tabs.create({

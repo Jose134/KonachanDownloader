@@ -7,9 +7,18 @@
     </head>
 
     <body>
-        <input type="text" id="input_tags"></input>
-        <button id="button_download">Download!</button>
-        <script type="text/javascript" src="page.js"></script>
+        <!--img class="image" src="../icons/icon_256.png"></img-->
+        
+        <form style="position: absolute; bottom: 0;">
+            <label for="input_tags">Tags: </label>
+            <input type="text" id="input_tags"></input>
+
+            <label for="input_limit">Limit: </label>
+            <input type="number" id="input_limit" min="1" max="100" value="100"></input>
+
+            <button id="button_download">Download!</button>
+            <script type="text/javascript" src="page.js"></script>
+        </form>
     </body>
 
 </html>
