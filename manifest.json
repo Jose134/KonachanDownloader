@@ -6,10 +6,14 @@
     "version": "1.0",
 
     "permissions": [
-        "*",
         "*://onewaifuaday.000webhostapp.com/*",
+        "*://konachan.com/*",
+        "*://konachan.net/*",
+        "*://yande.re/*",
         "activeTab",
-        "downloads"
+        "tabs",
+        "downloads",
+        "<all_urls>"
     ],
 
     "background": {
